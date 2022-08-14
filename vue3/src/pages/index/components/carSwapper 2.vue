@@ -115,6 +115,7 @@ export default {
     width: 100%;
     height: 354px;
     display: flex;
+    margin-top: 30px;
   }
   &-detail{
     width: 738px;

@@ -25,16 +25,17 @@
             </div>
           </div>
         </div>
-
-        <div class="new-list-last">- 到底了 -</div>
       </div>
     </div>
 
     <!-- 右侧排行榜 -->
     <div class="energy-rank">
+      <div class="energy-hot">
+        <Recommend />
+      </div>
       <div class="energy-rank-type">
         <div class="energy-rank-title">
-          新能源体验
+          快速找车
         </div>
         <div class="energy-rank-select-wrapper">
           <div class="energy-rank-select-item">
@@ -50,7 +51,7 @@
       </div>
       <div class="energy-rank-type">
         <div class="energy-rank-title">
-          新能源销量
+          关注排行
         </div>
 
         <div class="energy-rank-list">
@@ -70,17 +71,24 @@
           </div>
         </div>
       </div>
+
+      <div class="energy-load-more">
+        查看更多
+        <img src="../../../assets/blue-arrow.png" alt="">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import VTabs from '../../../components/v-tabs/index.vue'
+import Recommend from './recommend.vue'
 const rankCar = require('../../../assets/rank-car.png')
 export default {
   name: 'newsList',
   components: {
     VTabs,
+    Recommend,
   },
   data () {
     return {
@@ -166,14 +174,14 @@ export default {
         },
         {
           img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男',
+          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
           number: '3026',
           type: '导购',
           status: true
         },
         {
           img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg',
-          title: '爱在大草原 吉利豪越的设计师一定是个暖男',
+          title: '爱在大草原 吉利豪越的设计师一定是个暖男吉利豪越的设计师一定是个暖男',
           number: '3026',
           type: '导购',
           status: true
@@ -309,16 +317,28 @@ export default {
       }
     }
   }
-  &-last{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    color: #888888;
-    margin: 0 0 132px;
-  }
 }
 .energy{
+  &-load-more{
+    width: 382px;
+    height: 50px;
+    background: #F5FAFF;
+    border: 1px solid #0091FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #2686D2;
+
+    img{
+      width: 10px;
+      height: 6px;
+      margin-left: 6px;
+    }
+  }
+  &-hot{
+    margin-bottom: 30px;
+  }
   &-rank{
     flex: 1;
     margin-left: 40px;
