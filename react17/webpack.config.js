@@ -2,17 +2,23 @@
  * @Author: Sunny
  * @Date: 2021-11-07 23:25:54
  * @LastEditors: Suuny
- * @LastEditTime: 2022-04-19 17:08:36
+ * @LastEditTime: 2022-04-19 17:02:45
  * @Description: 
- * @FilePath: /micro-front-end-teach-asset/react15/webpack.config.js
+ * @FilePath: /micro-front-end-teach-asset/react16/webpack.config.js
  */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  entry: {
-    path: ['./index.js']
+  entry: { path: ['regenerator-runtime/runtime', './index.js'] },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'react16.js',
+    library: 'react16',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    publicPath: 'http://localhost:8083'
   },
   module: {
     rules: [
@@ -26,15 +32,10 @@ module.exports = {
         }
       },
       {
-        test: /\.(c|sc)ss$/,
+        test: /\.(cs|scs)s$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: {
-          loader: 'url-loader',
-        }
-      }
+
     ]
   },
   optimization: {
@@ -50,22 +51,13 @@ module.exports = {
       filename: '[name].css'
     })
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'react15.js',
-    library: 'react15',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-    publicPath: 'http://localhost:8082/'
-  },
   devServer: {
-    // 配置允许跨域
     headers: { 'Access-Control-Allow-Origin': '*' },
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8082,
+    port: 8083,
     historyApiFallback: true,
-    hot: true,
+    hot: true
   },
   performance: {   //  就是为了加大文件允许体积，提升报错门栏。  
     hints: "warning", // 枚举
