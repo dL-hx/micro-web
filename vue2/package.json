@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "single-spa-vue": "^2.4.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
