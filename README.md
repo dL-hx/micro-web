@@ -1,3 +1,6 @@
+git push origin --tags
+
+
 vue2
 - http://:localhost:8080/#/
     - energy
@@ -16,3 +19,4 @@ react17
     -/login
     -/new-car
     -/rank
+

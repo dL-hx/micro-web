@@ -7,7 +7,7 @@ import axios from 'axios'
 const LoginPanel = () => {
 
   const goIndex = () => {
-    axios.post('http://localhost:3000/react16/login', {
+    axios.post('http://localhost:3000/react17/login', {
       a: 1,
       b: 2,
     })

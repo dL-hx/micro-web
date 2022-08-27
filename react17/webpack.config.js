@@ -1,11 +1,3 @@
-/*
- * @Author: Sunny
- * @Date: 2021-11-07 23:25:54
- * @LastEditors: Suuny
- * @LastEditTime: 2022-04-19 17:02:45
- * @Description: 
- * @FilePath: /micro-front-end-teach-asset/react16/webpack.config.js
- */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -14,8 +6,8 @@ module.exports = {
   entry: { path: ['regenerator-runtime/runtime', './index.js'] },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react16.js',
-    library: 'react16',
+    filename: 'react17.js',
+    library: 'react17',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     publicPath: 'http://localhost:8083'
