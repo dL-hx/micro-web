@@ -73,9 +73,9 @@ export default {
   data () {
     return {
       swapperList: [
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3884457102,4018905964&fm=26&gp=0.jpg',
-        'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2329770250,1897745847&fm=26&gp=0.jpg',
-        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=395380977,272417941&fm=26&gp=0.jpg',
+        'https://www.volvocars.com.cn/images/v/cn/-/media/project/contentplatform/data/media/my23/homepage/homepage-gallery-01-21x9.jpg?iar=0&w=1920',
+        'https://www.volvocars.com.cn/images/v/cn/-/media/project/contentplatform/data/media/my23/featured-models/xc60-recharge-4x3.jpg?iar=0&w=1080',
+        'https://www.volvocars.com.cn/images/v/cn/-/media/project/contentplatform/data/media/my23/featured-models/s90_recharge_lwb_promoted_vehicle_desktop_1920x1440.jpg?iar=0&w=1080',
       ],
       currentIndex: 0,
       leftHover: false,
