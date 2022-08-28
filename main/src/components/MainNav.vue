@@ -35,63 +35,37 @@
 
 <script>
 import { ref, watch } from 'vue'
+import { NAV_LIST } from '../const/nav'
+import {useRouter, useRoute} from 'vue-router'
 export default {
   name: 'MainNav',
   setup() {
-    const NAV_LIST = [
-      {
-        name: '首页',
-        status: true,
-        value: 0,
-        url: '/vue3/#/index',
-        hash: '',
-      },
-      {
-        name: '资讯',
-        status: false,
-        value: 1,
-        url: '/react15#/information',
-      },
-      {
-        name: '视频',
-        status: false,
-        value: 2,
-        url: '/react15#/video',
-        hash: '',
-      },
-      {
-        name: '选车',
-        status: false,
-        value: 3,
-        url: '/vue3/#/select',
-        hash: '',
-      },
-      {
-        name: '新能源',
-        status: false,
-        value: 4,
-        url: '/vue2#/energy',
-        hash: '',
-      },
-      {
-        name: '新车',
-        status: false,
-        value: 5,
-        url: '/react17#/new-car',
-        hash: '',
-      },
-      {
-        name: '排行',
-        status: false,
-        value: 6,
-        url: '/react17#/rank',
-        hash: '',
-      },
-    ]
+    const router = useRouter()
+    const route = useRoute() // 获取当前路由对象
+
+    // 刷新时候，在当前路由
+    watch(route,(val)=>{
+      // console.log(val);
+      
+      // console.log(val.fullPath) // 当前路由
+      for (let i = 0; i < NAV_LIST.length; i++) {
+        if (val.fullPath.indexOf(NAV_LIST[i].url)!==-1) { // 如果当前路由与路由匹配上
+           currentIndex.value = i  // 设置active
+        }
+      }
+
+    }, {deep: true})    // 深度监听
 
     const currentIndex = ref(0) // 创建响应式变量
+
     const setCurrentIndex = (data, index) => {
+      // 优化：如果当前路由就是当前的路由,就不要触发set
+      if (data.url === route.fullPath) {
+        return ;
+      }
+
       currentIndex.value = index
+      router.push(data.url)
     }
 
     const searchStatus = ref(true)

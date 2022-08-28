@@ -3,7 +3,9 @@
   <MainNav />
   <div class="sub-container">
     <Loading v-show="loading" />
-    <div v-show="!loading" id="sub-body">子应用内容</div>
+    <!-- <div v-show="!loading" id="sub-container">子应用内容</div> -->
+    <!-- 修改如下 -->
+    <div v-show="!loading" id="micro-container">子应用内容</div>
   </div>
   <Footer />
 </template>
@@ -59,7 +61,7 @@ height: 100%;
   position: relative;
 }
 
-#micro-container {
+#micro-container{
   min-height: 100%;
   width: 100%;
 }
