@@ -30,8 +30,10 @@ module.exports = {
     },
     output: {
       // 把子应用打包成 umd 库格式 commonjs 浏览器，node环境
-      library: `${packageName}`,
       libraryTarget: 'umd',
+      filename: `${packageName}.js`,
+      library: `${packageName}`,// 可以通过window.vue2 获取应用的内容
+      jsonpFunction: `webpackJsonp_${packageName}`,
     },
   },
 };

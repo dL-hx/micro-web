@@ -47,7 +47,7 @@ class InformationNews extends React.Component {
 
         {/* 广告位 */}
         <div className="information-news-detail">
-          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg" alt=""/>
+          <img src="https://youjia-image.cdn.bcebos.com/modelImage/ad1c9ae9fd2d4afa9ab5164ed215dd70/1625553531324910972d.JPG@!thumbnail" alt=""/>
         </div>
       </div>
     )
