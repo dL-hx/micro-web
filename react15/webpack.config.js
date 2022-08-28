@@ -10,6 +10,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const port = 9082
 module.exports = {
   entry: {
     path: ['./index.js']
@@ -56,14 +57,14 @@ module.exports = {
     library: 'react15',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    publicPath: 'http://localhost:8082/'
+    publicPath: `http://localhost:${port}/`
   },
   devServer: {
     // 配置允许跨域
     headers: { 'Access-Control-Allow-Origin': '*' },
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8082,
+    port: port,
     historyApiFallback: true,
     hot: true,
   },

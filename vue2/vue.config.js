@@ -5,13 +5,13 @@ function resolve(dir) {
 }
 
 const packageName = 'vue2';
-const port = 8080;
+const port = 9080;
 
 module.exports = {
   outputDir: 'dist', // 打包的目录
   assetsDir: 'static', // 打包的静态资源
   filenameHashing: true, // 打包出来的文件，会带有hash信息
-  publicPath: 'http://localhost:8080',
+  publicPath: `http://localhost:${port}`,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: false,

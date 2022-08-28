@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const port = 9083
 module.exports = {
   entry: { path: ['regenerator-runtime/runtime', './index.js'] },
   output: {
@@ -10,7 +11,7 @@ module.exports = {
     library: 'react17',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    publicPath: 'http://localhost:8083'
+    publicPath: `http://localhost:${port}`
   },
   module: {
     rules: [
@@ -47,7 +48,7 @@ module.exports = {
     headers: { 'Access-Control-Allow-Origin': '*' },
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 8083,
+    port: port,
     historyApiFallback: true,
     hot: true
   },

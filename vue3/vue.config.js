@@ -6,13 +6,13 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-const port = 8081;
+const port = 9081;
 
 module.exports = {
   outputDir: 'dist',
   assetsDir: 'static',
   filenameHashing: true,
-  publicPath: 'http://localhost:8081',
+  publicPath: `http://localhost:${port}`,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
