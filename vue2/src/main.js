@@ -34,5 +34,5 @@ export const mount = ()=>{
 
 export const unmount = ()=>{
   console.log("卸载", instance);
-  // 卸载时候卸载vue实例
+  // 卸载时候卸载vue实例,卸载事件,清空当前根元素的内容
 }
