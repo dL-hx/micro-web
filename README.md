@@ -1,3 +1,4 @@
+git tag -a v0.1.0 -m "release 0.1.0 version" 
 git push origin --tags
 
 

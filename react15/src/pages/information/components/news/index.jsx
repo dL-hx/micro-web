@@ -47,7 +47,7 @@ class InformationNews extends React.Component {
 
         {/* 广告位 */}
         <div className="information-news-detail">
-          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg" alt=""/>
+          <img src="https://www.volvocars.com.cn/images/v/cn/-/media/project/contentplatform/data/media/my23/featured-models/s90_recharge_lwb_promoted_vehicle_desktop_1920x1440.jpg?iar=0&w=1080" alt=""/>
         </div>
       </div>
     )
