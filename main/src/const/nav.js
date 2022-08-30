@@ -11,6 +11,7 @@ export const NAV_LIST = [
       status: false,
       value: 1,
       url: '/react15/information',
+      hash:''
     },
     {
       name: '视频',

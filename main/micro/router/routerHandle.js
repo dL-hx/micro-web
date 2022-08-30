@@ -1,5 +1,7 @@
+import { isTurnChild } from "../utils";
 // 每次路由切换打印事件
 export const turnApp = ()=>{
-    console.log('路由切换了');
-    
+    if (isTurnChild()) {
+        console.log('路由切换了');
+    }
 }
