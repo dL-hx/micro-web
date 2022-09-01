@@ -18,6 +18,7 @@ import MainNav from "./components/MainNav";
 import Loading from "./components/Loading";
 import Footer from "./components/Footer";
 
+import {loading} from './store'
 
 export default {
   name: 'App',
@@ -29,14 +30,15 @@ export default {
   },
   setup() {
     // 声明双向数据ref
-    const loading = ref(true)
 
-    setTimeout(()=>{// 3s 后关闭 loding
-      loading.value = false
-    },3000)
+    // const loading = ref(true)
+
+    // setTimeout(()=>{// 3s 后关闭 loding
+    //   loading.value = false
+    // },3000)
 
     return {
-      loading,
+      loading:loading.loadingStatus,
     }
   }
 }

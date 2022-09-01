@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import { subNavList } from './store/sub'
 // 主应用引入 util 方法
-import { registerApp } from './store/utils'
+import { registerApp } from './util/utils'
 
 registerApp(subNavList)
 

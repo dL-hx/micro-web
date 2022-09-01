@@ -27,7 +27,7 @@ const filterApp = (key, value)=>{// 当前key值===value值
 
 const getCurrentPrefix = (value=window.location.pathname)=>{
     const currentPrefix = value.match(/(\/\w+)/g)
-    return currentPrefix[0]
+    return currentPrefix&&currentPrefix.length&&currentPrefix[0]
 }
 
 // 子应用是否做了切换
