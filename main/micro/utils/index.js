@@ -16,10 +16,14 @@ export const currentApp = ()=>{
 }
 
 
+export const findAppByRoute = (router) =>{
+    return filterApp('activeRule', router)
+}
+
+
 // 过滤当前路由
 const filterApp = (key, value)=>{// 当前key值===value值
-   
-    const currentApp = getList().filter(item => item[key]===getCurrentPrefix()) // => array
+    const currentApp = getList().filter(item => item[key]===value) // => array
     // console.log('currentApp', currentApp);
     
     return currentApp && currentApp.length ? currentApp[0]:{}
@@ -32,9 +36,19 @@ const getCurrentPrefix = (value=window.location.pathname)=>{
 
 // 子应用是否做了切换
 export const isTurnChild = ()=>{
-    
-    if (window.__CURRENT_SUB_APP__===getCurrentPrefix()) {
+    window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__ // window.__ORIGIN_APP__ : 上个子应用
+    const currentApp= getCurrentPrefix()
+
+    if (!currentApp) {
+        return ;
+    }
+
+    if (window.__CURRENT_SUB_APP__ === currentApp) {
         return false;
     }
+
+  
+    window.__CURRENT_SUB_APP__ = currentApp// window.__CURRENT_SUB_APP__ : 当前子应用
+
     return true
 }

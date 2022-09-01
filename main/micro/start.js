@@ -13,11 +13,11 @@ const registerMicroApps = (appList, lifeCycle)=>{
     // window.appList = appList
     setList(appList)
 
-    lifeCycle.beforeLoad[0]()
+    // lifeCycle.beforeLoad[0]()
 
-    setTimeout(()=>{// 3s后隐藏loading
-        lifeCycle.mounted[0]()
-    },3000)
+    // setTimeout(()=>{// 3s后隐藏loading
+    //     lifeCycle.mounted[0]()
+    // },3000)
     // 缓存生命周期
     setMainLifecycle(lifeCycle)
 
