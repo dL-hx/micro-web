@@ -10,7 +10,9 @@ const filePath = {
     react15: path.resolve(__dirname, '../react15'),
     react17: path.resolve(__dirname, '../react17'),
     // 添加启动service命令
-    service: path.join(__dirname, '../service')
+    service: path.join(__dirname, '../service'),
+    
+    main:path.join(__dirname,'../main')
 }
 // cd 子应用目录 && npm start 启动项目 
 function runChild() {
